@@ -32,7 +32,7 @@ array(
 		//Fitting window
 		$fitting_output .= \'<div id="fittingwindow"><img border="0" alt="" src="images/fitting/fitting2.png"></div>\';
 		
-		$sql = \'SELECT * FROM EFTShips WHERE typeName="\'.$shipType.\'"\';
+		$sql = \'SELECT * FROM EFTShips WHERE typeName="\'.mysql_real_escape_string($shipType).\'"\';
 		$result = $smcFunc[\'db_query\'](\'\',$sql);
 		$shipdetails = $smcFunc[\'db_fetch_assoc\']($result);
 		$fitting_output .= \'<div id="shipicon"><img border="0" alt="" title="\'.$shipType.\'" src="http://image.eveonline.com/InventoryType/\'.$shipdetails["TypeID"].\'_64.png"></div>\';
