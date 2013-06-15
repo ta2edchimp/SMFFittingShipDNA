@@ -85,7 +85,7 @@ array(
 				$fitting_output .= \'<div id="\'.$row[\'location\'].$position[$row[\'location\']].\'"><img border="0" title="\'.$itemname.\'" src="http://image.eveonline.com/Type/\'.$row[\'TypeID\'].\'_32.png" /></div>\';
 			
 				if ($row[\'location\'] == \'SubSystem\') {
-					$shipDNA_arr[\'SubSystem\'][$position[$row[\'location\']] - 1] = $row[\'TypeID\'];
+					$shipDNA_arr[\'SubSystem\'][$position[$row[\'location\']] - 1] = $row[\'TypeID\'] . \';1\';
 					$shipDNA_log .= \'<br>ShipDNA: Added "\' . $row[\'location\'] . \'" #\' . $position[$row[\'location\']] . \' "\' . $row[\'TypeID\'] . \'" ("\' . $itemname .\'")\';
 				} else {
 					if ($shipDNA_arr[$row[\'location\']][$row[\'TypeID\']] == null) {
