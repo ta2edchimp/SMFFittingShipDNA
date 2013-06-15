@@ -72,6 +72,7 @@ array(
 				continue;
 			
 			//get the info about the module
+			$itemname = str_replace("&#039;", "\'", $itemname); // Fix for apostrophe problem...
 			$sql = \'SELECT * FROM EFTmodules where TypeName = "\' . mysql_real_escape_string($itemname) . \'"\';
 				
 			$result = $smcFunc[\'db_query\'](\'\',$sql);
